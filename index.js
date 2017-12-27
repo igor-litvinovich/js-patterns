@@ -1,17 +1,4 @@
-function abc() {
-  let a = function() {
-    return this;
-  };
-  let b = () => {
-    return this;
-  };
-  return {
-    a,
-    b
-  }
-}
+const testBuilder = require('./creationalPatterns/builder');
 
-let a = this;
-console.log(a);
-
+testBuilder();
 
