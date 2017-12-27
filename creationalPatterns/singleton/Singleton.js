@@ -1,13 +1,15 @@
 class Singleton {
-  constructor() {
+  constructor(name) {
+    this._name = name;
     if (!Singleton._instance) {
       Singleton._instance = this;
+      console.log('new Singleton instance has been created.');
     }
     return Singleton._instance;
   }
 
-  getName() {
-    return "My name is John";
+  get name() {
+    return this._name;
   }
 }
 
