@@ -1,18 +1,16 @@
-const ConcreteBuilder = require('./ConcreteBuilder');
-
 class Director {
-    constructor() {
-        this.structure = ["Maze", "Wall", "Door"];
+    constructor(pizzaBuilder) {
+        this._pizzaBuilder = pizzaBuilder;
         console.log("Director class created");
     }
 
-    Construct() {
-        this.structure.forEach(item => {
-            let builder = new ConcreteBuilder();
-            builder.BuildPart(item);
-            const result = builder.GetResult();
-            console.log(`Director.Construct result: ${JSON.stringify(result)}`);
-        });
+    constructPizza() {
+        this._pizzaBuilder.createNewPizza();
+        this._pizzaBuilder.buildDough();
+        this._pizzaBuilder.buildSouce();
+        this._pizzaBuilder.buildTopping();
+        const pizza = this._pizzaBuilder.getResult();
+        return pizza;
     }
 }
 

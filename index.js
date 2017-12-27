@@ -3,5 +3,5 @@ const testSingleton = require('./creationalPatterns/singleton');
 const testDecorator = require('./structuralPatterns/decorator');
 const testFactoryMethod = require('./creationalPatterns/factoryMethod');
 
-testFactoryMethod();
+testBuilder();
 
